@@ -57,6 +57,8 @@ REST_FRAMEWORK = {
     ),
 }
 
+AUTH_USER_MODEL = 'tasks.User'
+
 ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
