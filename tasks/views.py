@@ -29,7 +29,7 @@ class TaskViewSet(ModelViewSet):
     search_fields = ['title', 'status']
 
     def get_queryset(self):
-        return Task.objects.filter(user=self.request.user)
+        return Task.objects.filter(user=self.request.user).order_by('-created_at')
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
